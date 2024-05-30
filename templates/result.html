@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Result</h1>
+        <h2>Specialist with the highest chance:</h2>
+        <p>{{ highest_specialist }}</p>
+        <h2>Specialties fetched from API:</h2>
+        <ul>
+            {% for specialist in specialists %}
+            <li>Disease: {{ specialist.Disease }}, Specialist: {{ specialist.Specialist }}, Chances: {{ specialist.Chances }}%</li>
+            {% endfor %}
+        </ul>
+        <h2>Doctors with specialty '{{ highest_specialist }}' available on {{ day }}:</h2>
+        <ul>
+            {% for doctor in doctors %}
+            <li>{{ doctor }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

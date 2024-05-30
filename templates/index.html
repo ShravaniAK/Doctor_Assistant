@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Assistant</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Medical Assistant</h1>
+        <form action="/" method="post">
+            <label for="symptoms">Enter your symptoms (comma-separated):</label>
+            <input type="text" id="symptoms" name="symptoms">
+            <label for="day">Enter the day of the week:</label>
+            <input type="text" id="day" name="day">
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
